@@ -1,6 +1,6 @@
 # simple-lb
 
-This is a simple load balancer that supports **Random** a **Round Robin** strategies.
+This is a simple load balancer that supports **Random** and **Round Robin** strategies.
 
 ## Project Structure
 
