@@ -1,0 +1,32 @@
+### Excluding p1
+POST http://localhost:8080/lb/roundrobin/exclude/RR-p1
+
+### Excluding p3
+POST http://localhost:8080/lb/roundrobin/exclude/RR-p3
+
+### Excluding p5
+POST http://localhost:8080/lb/roundrobin/exclude/RR-p5
+
+### Excluding p7
+POST http://localhost:8080/lb/roundrobin/exclude/RR-p9
+
+### should retrun  total providers = 6, counter= 0, next = (counter + 1) % total = (0 + 1) % 6 = 1 (provider at index 1 {p4} )
+GET http://localhost:8080/lb/roundrobin
+
+### should retrun the next provider in the list  p6
+GET http://localhost:8080/lb/roundrobin
+
+### re-Including p7
+POST http://localhost:8080/lb/roundrobin/include/RR-p7
+
+### should retrun p8
+GET http://localhost:8080/lb/roundrobin
+
+### should retrun p9
+GET http://localhost:8080/lb/roundrobin
+
+### should retrun 10
+GET http://localhost:8080/lb/roundrobin
+
+### should retrun 7
+GET http://localhost:8080/lb/roundrobin

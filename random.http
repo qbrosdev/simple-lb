@@ -1,0 +1,25 @@
+###
+POST http://localhost:8080/lb/random/exclude/p1
+
+###
+POST http://localhost:8080/lb/random/exclude/p3
+
+###
+POST http://localhost:8080/lb/random/exclude/p9
+
+###
+POST http://localhost:8080/lb/random/exclude/p7
+
+### Only p2 p4 p5 p6 p8 p10 should provide values
+GET http://localhost:8080/lb/random
+
+
+###
+POST http://localhost:8080/lb/random/include/p3
+
+###
+POST http://localhost:8080/lb/random/include/p9
+
+
+### Only p2 p4 p5 p6 p8 p10  and p3 ,p7 should provide values
+GET http://localhost:8080/lb/random
